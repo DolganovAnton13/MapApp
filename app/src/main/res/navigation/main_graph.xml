@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/fragmentLogin"
-        android:name="com.antondolganov.mapapp.FragmentLogin"
+        android:name="com.antondolganov.mapapp.view.fragment.FragmentLogin"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/fragmentMap"
-        android:name="com.antondolganov.mapapp.FragmentMap"
+        android:name="com.antondolganov.mapapp.view.fragment.FragmentMap"
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" />
 </navigation>
