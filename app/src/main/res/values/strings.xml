@@ -3,5 +3,6 @@
     <string name="empty_field">Поля не могут быть пустыми. Пожалуйста, введите все данные</string>
     <string name="no_internet_connection">Нет подключения к сети</string>
     <string name="incorrect_data">: вы указали неверный логин или пароль</string>
+    <string name="google_map_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAc3J1BOisQc2jEhBlKsyTvMStMP9sgC8c</string>
 
 </resources>

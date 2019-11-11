@@ -1,7 +1,6 @@
 package com.antondolganov.mapapp.di.module;
 
 import com.antondolganov.mapapp.api.Api;
-import com.antondolganov.mapapp.di.module.ContextModule;
 
 import dagger.Module;
 import dagger.Provides;

@@ -1,10 +1,16 @@
 package com.antondolganov.mapapp.data;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Login {
+
+    @PrimaryKey(autoGenerate = true)
+    private long id;
 
     private String access_token;
     private String token_type;
-
 
     public Login(String access_token, String token_type) {
         this.access_token = access_token;
@@ -27,4 +33,11 @@ public class Login {
         this.token_type = token_type;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }

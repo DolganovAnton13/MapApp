@@ -1,9 +1,10 @@
 package com.antondolganov.mapapp.view.fragment;
 
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,10 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.antondolganov.mapapp.R;
 import com.antondolganov.mapapp.databinding.FragmentLoginBinding;
@@ -66,15 +63,19 @@ public class FragmentLogin extends Fragment {
     }
 
     private void observeViewModel() {
+
+        model.resultLiveData.observe(getViewLifecycleOwner(), result -> {
+            if (result!=null && result.equals("RESULT_OK")) {
+                model.resultLiveData.setValue(null);
+                model.statusLiveData.setValue(null);
+                navController.navigate(R.id.fragmentMap);
+            }
+        });
+
         model.statusLiveData.observe(getViewLifecycleOwner(), status ->
         {
             if (status != null) {
-                if (status == "RESULT_OK")
-                {
-                    //navController.navigate(R.id.fragmentMap);
-                }
-                else
-                    snackbarShow(status);
+                snackbarShow(status);
             }
         });
 
